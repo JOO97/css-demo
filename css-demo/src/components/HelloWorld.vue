@@ -1,36 +1,53 @@
 <template>
-  <div>
-    <div class="wrapper" ref="box" id="box"></div>
-    <button @click="move">move</button>
+  <div class="wrapper">
+    <div class="item"></div>
+    <div class="item"></div>
+    <!-- <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div> -->
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
-  methods: {
-    move() {
-      console.log(1)
-      // const { box } = this.$refs
-      const box = document.getElementById('box')
-      console.log(box.offsetLeft)
-      let timer = setInterval(() => {
-        let speed = 10
-        if (box.offsetLeft != 1000) {
-          box.style.left = box.offsetLeft + speed + 'px'
-        } else {
-          clearInterval(timer)
-        }
-      }, 50)
-    }
-  }
+  data() {
+    return {}
+  },
+  methods: {}
 }
 </script>
 
 <style scoped lang="scss">
 .wrapper {
-  width: 50px;
-  height: 50px;
-  border: 1px solid #000;
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+  background: #e7e7e7;
+  border-radius: 5px;
+  display: flex;
+  //1
+  align-items: center;
+  justify-content: center;
+  //6
+  // flex-wrap: wrap;
+  // align-items: center;
+}
+.item {
+  position: relative;
+  width: 50%;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 </style>
