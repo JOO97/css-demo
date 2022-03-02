@@ -1,5 +1,10 @@
 <template>
-  <div class="wrapper">joo</div>
+  <div class="wrapper">
+    <!-- <div class="row">
+      <div style="height: 200px">1</div>
+      <div style="clear: both">2</div>
+    </div> -->
+  </div>
 </template>
 
 <script>
@@ -9,50 +14,66 @@ export default {
 </script>
 
 <style lang="scss">
-html {
-  // 100vw / 375 = x / 100
-  // font-size: 4.266667vw; //让1rem = 100px
-}
-body {
-  font-size: 100px;
-}
-/* max-width：1401 大于时才会应用 */
-@media (min-width: 1401px) {
-  .wrapper {
-    background: #f1f1f1;
-  }
-}
-/* max-width：1400 小于时才会应用 */
-@media (max-width: 1400px) {
-  .wrapper {
-    background: #000;
-  }
-}
+//居中
+// body {
+//   //1
+//   // display: flex;
+//   // justify-content: center;
+//   // align-items: center;
+//   //2
+//   // position: relative;
+//   //3
+//   position: relative;
+//   .wrapper {
+//     //2
+//     // position: absolute;
+//     // left: 50%;
+//     // top: 50%;
+//     // transform: translate(-50%, -50%);
+//     // width: 50px;
+//     //3
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     bottom: 0;
+//     margin: auto;
+//     height: 50px;
+//     width: 50px;
+//     background: pink;
+//   }
+// }
 
-@media (max-width: 1200px) {
-  .wrapper {
-    background: pink;
-  }
-}
+//clear
+// .wrapper {
+//   .row {
+//     margin-bottom: 5px;
+//     div {
+//       background: pink;
+//       &:nth-child(n) {
+//         float: left;
+//       }
+//     }
+//     &:nth-child(1) {
+//       //1
+//       // overflow: auto;
+//       //2
+//       // &::after {
+//       //   content: '';
+//       //   display: block;
+//       //   clear: both;
+//       // }
+//     }
+//   }
+// }
 
-@media (max-width: 992px) {
-  .wrapper {
-    background: skyblue;
-  }
-}
+//triangle
 
-@media (max-width: 768px) {
-  .wrapper {
-    background: yellowgreen;
-  }
-}
-
-@media (max-width: 576px) {
-  .wrapper {
-    background: green;
-  }
-  body {
-    font-size: 50px;
-  }
-}
+// .wrapper {
+//   width: 0;
+//   height: 0;
+//   border-style: solid;
+//   border-width: 0 50px 50px;
+//   border-color: transparent transparent pink transparent;
+// }
 </style>
